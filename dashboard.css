@@ -1,0 +1,529 @@
+:root {
+    --primary: #4a6cfa;
+    --secondary: #6c4aed;
+    --accent: #f5f7ff;
+    --text: #333;
+    --light-text: #666;
+    --bg: #ffffff;
+    --card-bg: #f8f9ff;
+    --error: #ff4d4f;
+    --success: #52c41a;
+    --warning: #faad14;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+
+    background-color: #ffffff;
+    color: #333;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.div-back {
+    background-color: #4a6cfa;
+    height: 2.7rem;
+    width: 6rem;
+    position: absolute;
+    left: 87%;
+    top: 15%;
+    padding: 0.2rem .3rem;
+    border-radius: 40px;
+}
+
+.div-back a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #ffffff;
+
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3a86ff;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #ff006e;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.app-body {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.med-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e1e5fe;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.med-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 108, 250, 0.2);
+}
+
+.input-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.camera-btn,
+.search-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.camera-btn {
+    background-color: var(--accent);
+    color: var(--primary);
+    flex: 1;
+}
+
+.search-btn {
+    background-color: var(--primary);
+    color: white;
+    flex: 1;
+}
+
+.camera-btn:hover,
+.search-btn:hover {
+    transform: translateY(-2px);
+}
+
+.camera-btn:active,
+.search-btn:active {
+    transform: translateY(0);
+}
+
+.language-selector {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    margin: 1rem 0;
+    gap: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.language-selector::-webkit-scrollbar {
+    display: none;
+}
+
+.language-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e1e5fe;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    background-color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.language-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.result-card {
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 1.5rem;
+    display: none;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.med-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.med-category {
+    font-size: 0.8rem;
+    background-color: rgba(74, 108, 250, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+    color: var(--text);
+}
+
+.section-content {
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+.section-list {
+    list-style-type: none;
+    padding-left: 0.5rem;
+}
+
+.section-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.section-list li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.dosage-info {
+    background-color: rgba(74, 108, 250, 0.05);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+}
+
+.dosage-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.dosage-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--light-text);
+    width: 100px;
+}
+
+.dosage-value {
+    font-size: 0.9rem;
+}
+
+.warning-section {
+    background-color: rgba(250, 173, 20, 0.1);
+    border-left: 4px solid var(--warning);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+}
+
+.warning-title {
+    color: var(--warning);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+#fileInput {
+    display: none;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(74, 108, 250, 0.1);
+    border-left-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .input-actions {
+        flex-direction: column;
+    }
+
+    .camera-btn,
+    .search-btn {
+        width: 100%;
+    }
+
+    .med-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #4a6dfa68;
+    border: none;
+    color: rgb(244, 237, 237);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #e0e0e0;
+    --light-text: #a0a0a0;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .card,
+body.dark-mode .med-input,
+body.dark-mode .language-btn {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .med-input {
+    color: var(--text);
+}
+
+body.dark-mode .camera-btn {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Transitions for smooth theme toggle */
+body,
+.card,
+.med-input,
+.language-btn,
+.camera-btn {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Audio playback */
+.audio-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.audio-btn span {
+    font-size: 0.9rem;
+}
+
+/* File upload progress */
+.upload-progress {
+    height: 4px;
+    width: 0%;
+    background-color: var(--primary);
+    transition: width 0.3s;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Camera capture modal */
+.camera-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-container {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+#cameraFeed {
+    width: 100%;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+.camera-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.camera-control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.capture-btn {
+    background-color: white;
+    color: var(--primary);
+}
+
+.close-camera-btn {
+    background-color: var(--error);
+    color: white;
+}
+
+/* OCR Processing animation */
+.ocr-processing {
+    margin-top: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.ocr-processing .spinner {
+    border-left-color: white;
+}
+
+/* Responsive adjustments for camera modal */
+@media (max-width: 600px) {
+    .camera-container {
+        width: 90%;
+    }
+}

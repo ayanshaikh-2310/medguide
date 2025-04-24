@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In </title>
+    <link rel="stylesheet" href="sign_in.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><span class="med">Med</span><span class="guide">Guide</span></a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#problem">Problem</a>
+                <a href="index.html#solution">Solution</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="signup-section">
+        <div class="signup-container">
+            <!-- Step 1: Email Input -->
+            <div class="form-step active" id="step-1">
+                <h2 class="form-title">Sign In for MedGuide</h2>
+                <p class="form-subtitle">Welcoome back! Let's continue your journey.</p>
+                <form id="email-form">
+                    <div class="form-group">
+                        <label for="email"><strong>Email Address</strong></label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        <div class="error" id="email-error"></div>
+
+                        <input type="password" id="password" class="form-control" placeholder="Enter Password" required>
+                        <div class="error" id="password-error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="btn_cnt">Continue</button>
+                    <div class="spinner" id="spinner"></div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <script src="sign_in.js"></script>
+</body>
+
+</html>

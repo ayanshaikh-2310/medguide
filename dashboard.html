@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuide</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- FontAwesome, Tesseract.js, your CSS… -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <h1 class="logo">Med<span>Guide</span> </h1>
+        <p>Understand your medications easily in your language</p>
+    </header>
+
+    <div class="container">
+        <div class="app-body">
+            <div class="card">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label class="input-label">Enter medicine name or take a picture</label>
+                        <input type="text" class="med-input" id="medicineInput"
+                            placeholder="e.g., Paracetamol, Metformin...">
+                        <div class="upload-progress" id="uploadProgress"></div>
+                    </div>
+                    <div class="input-actions">
+                        <button class="camera-btn" id="cameraBtn">
+                            <i class="fas fa-camera"></i>
+                            <span>Take Photo</span>
+                        </button>
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" capture="environment">
+                </div>
+
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" data-lang="en">English</button>
+                    <button class="language-btn" data-lang="hi">हिन्दी (Hindi)</button>
+                    <button class="language-btn" data-lang="ta">தமிழ் (Tamil)</button>
+                    <button class="language-btn" data-lang="mr">मराठी (Marathi)</button>
+                    <button class="language-btn" data-lang="gu">ગુજરાતી (Gujarati)</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Finding medicine information...</p>
+            </div>
+
+            <div class="result-card" id="resultCard">
+                <div class="result-header">
+                    <h2 class="med-name" id="medName"></h2>
+                    <span class="med-category" id="medCategory"></span>
+                </div>
+
+                <button class="audio-btn" id="audioBtn">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Listen</span>
+                </button>
+
+                <h3 class="section-title">What is it used for?</h3>
+                <p class="section-content" id="medUse">
+
+                </p>
+
+                <div class="dosage-info">
+                    <h3 class="section-title">How to take it?</h3>
+                    <div class="dosage-row">
+                        <span class="dosage-label">Adult dose:</span>
+                        <span class="dosage-value" id="adultDose"></span>
+                    </div>
+                    <div class="dosage-row">
+                        <span class="dosage-label">When to take:</span>
+                        <span class="dosage-value" id="whenToTake"></span>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Side effects</h3>
+                <ul class="section-list" id="sideEffects">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <div class="warning-section">
+                    <div class="warning-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Important warnings</span>
+                    </div>
+                    <ul class="section-list" id="warnings">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="camera-modal" id="cameraModal">
+        <div class="camera-container">
+            <video id="cameraFeed" autoplay playsinline></video>
+            <div class="ocr-processing" id="ocrProcessing">
+                <div class="spinner"></div>
+                <p>Reading text from image...</p>
+            </div>
+        </div>
+        <div class="camera-controls">
+            <button class="camera-control-btn capture-btn" id="captureBtn">
+                <i class="fas fa-camera"></i>
+            </button>
+            <button class="camera-control-btn close-camera-btn" id="closeCameraBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MedGuide &copy; 2025 - Making healthcare accessible for everyone</p>
+    </footer>
+
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
